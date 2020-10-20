@@ -48,11 +48,8 @@ function decode(expr){
         arrayOfChars.push(expr.slice(startIndex,lastIndex))
         startIndex = startIndex + 10;
 
-        arrayOfChars[i] = arrayOfChars[i].replace(/00/g, "")
-        arrayOfChars[i] = arrayOfChars[i].replace(/10/g, ".")
-        arrayOfChars[i] = arrayOfChars[i].replace(/11/g, "-")
-        arrayOfChars[i] = arrayOfChars[i].replace(/\*{10}/g, " ")
-
+        arrayOfChars[i] = arrayOfChars[i].replace(/00/g, "").replace(/10/g, ".").replace(/11/g, "-").replace(/\*{10}/g, " ")
+        
         if(arrayOfChars[i] == " "){
             decodedArray.push(arrayOfChars[i])
         } else {
